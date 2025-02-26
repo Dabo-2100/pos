@@ -10,7 +10,7 @@ export default function LoginPage() {
   return (
     <div className="col-12 h-100 d-flex">
       <div
-        className="col-12 col-md-5 h-100 position-relative"
+        className="col-5 col-md-5 h-100 position-relative"
         style={{ background: "var(--white)" }}
       >
         <Logo className="position-absolute z-3 p-3" />
@@ -23,18 +23,36 @@ export default function LoginPage() {
           and Other Transactions
         </h4>
       </div>
+
       <div className="col-7 h-100 d-flex align-items-center justify-content-center">
-        <form className="col-6 d-flex flex-column gap-3" id={styles.login}>
+        <form className="col-8 d-flex flex-column gap-3" id={styles.login}>
           <div className="col-12">
             <h1>Welcome Back !</h1>
             <p>Please, sign in to continue</p>
           </div>
 
-          <input type="text" placeholder="Sales ID number" />
+          <div className={styles.inputContainer}>
+            <input
+              type="text"
+              className={styles.styledInputBar}
+              placeholder=""
+            />
+            <label className={styles.inputLabel} htmlFor="styled_input_bar">
+              Sales ID number
+            </label>
+          </div>
 
-          <div className="position-relative">
+          <div className={styles.inputContainer}>
             <FaEyeSlash className={styles.eyeIcon} />
-            <input type="text" placeholder="Password" />
+
+            <input
+              type="text"
+              className={styles.styledInputBar}
+              placeholder=""
+            />
+            <label className={styles.inputLabel} htmlFor="styled_input_bar">
+              Password
+            </label>
           </div>
 
           <button>Sing in</button>
@@ -43,12 +61,15 @@ export default function LoginPage() {
 
           <div className="d-flex justify-content-around">
             <button className={styles.btn}>
-              <FcGoogle className={`${styles.icon} fs-3`} /> Sign up with Google
+              <FcGoogle className={styles.icon} /> Sign up with Google
             </button>
 
             <button className={styles.btn}>
-              <ImFacebook2 className={`${styles.fbIcon} fs-3`} /> Sign up with
-              Facebook
+              <ImFacebook2
+                className={styles.icon}
+                style={{ color: "#0a53be" }}
+              />
+              Sign up with Facebook
             </button>
           </div>
 
